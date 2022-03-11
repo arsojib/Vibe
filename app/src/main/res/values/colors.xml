@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F26522</color>
+    <color name="colorPrimaryDark">#F26522</color>
+    <color name="colorAccent">#F26522</color>
+
+    <color name="colorPrimaryDisable">#66F26522</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorWhite70">#70FFFFFF</color>
+    <color name="colorLightGrey">#F2F2F2</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack2">#666666</color>
+    <color name="colorGrey">#CCCCCC</color>
+    <color name="pinkRed">#FA2850</color>
+    <color name="colorLightWhite">#E2E2E2</color>
+    <color name="colorDeepGrey70">#703B3B3B</color>
+    <color name="colorRed">#F33C3C</color>
+    <color name="colorYellow">#FEB400</color>
+    <color name="colorDarkGrey">#3B3B3B</color>
+
+    //SeekBar Color
+    <color name="progress_gray">#FFD8D8D8</color>
+    <color name="progress_gray_dark">#FF383838</color>
+    <color name="default_blue_light">#ff33b5e5</color>
+
+</resources>

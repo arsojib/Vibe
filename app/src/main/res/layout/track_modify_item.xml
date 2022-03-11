@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.beat.data.model.Track" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/remove"
+            style="@style/selectableForegroundStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_close" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_toEndOf="@id/remove"
+            app:cardCornerRadius="@dimen/_4sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_ph_track"
+                app:error="@{@drawable/ic_ph_track}"
+                app:imageUrl="@{data.trackImage}" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_toStartOf="@id/dragger"
+            android:layout_toEndOf="@+id/image"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.trackTitle}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_13sdp"
+                tools:text="Editors Choice 20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/_12sdp"
+                app:artistName="@{data.artistName}"
+                app:duration="@{data.duration}"
+                tools:text="20 Songs by Vibe" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dragger"
+            style="@style/selectableForegroundStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_menu"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

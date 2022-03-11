@@ -1,0 +1,4 @@
+include ':common'
+rootProject.name='Vibe'
+include ':app'
+include ':beat_core'

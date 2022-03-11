@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="androidx.lifecycle.LiveData" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="progress"
+            type="LiveData&lt;Integer>" />
+
+        <variable
+            name="duration"
+            type="Integer" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_220sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/trackImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_12sdp"
+            android:src="@drawable/ic_ph_track"
+            app:error="@{@drawable/ic_ph_track}"
+            app:imageUrl="@{imageUrl}" />
+
+        <com.beat.view.customView.CustomCircularSeekBar
+            android:id="@+id/mediaProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/_24sdp"
+            seekarc:progress="@{progress}"
+            seekarc:max="@{duration}"
+            seekarc:progressWidth="4dp"
+            seekarc:rotation="180"
+            seekarc:startAngle="0"
+            seekarc:touchInside="true" />
+
+    </RelativeLayout>
+
+</layout>

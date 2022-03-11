@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_favorite_border_28"
+        android:title="@string/add_to_favourite" />
+
+    <item
+        android:id="@+id/gotoArtist"
+        android:icon="@drawable/ic_artist_28"
+        android:title="@string/go_to_artist" />
+
+    <item
+        android:id="@+id/shareOnSocial"
+        android:icon="@drawable/ic_share_28"
+        android:title="@string/share_on_social" />
+
+</menu>

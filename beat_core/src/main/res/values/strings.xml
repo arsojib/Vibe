@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="something_went_wrong_please_try_again">Something went wrong Please try again…</string>
+    <string name="something_went_wrong_please_login_to_continue">Something went wrong Please login to continue…</string>
+    <string name="the_mobile_number_or_password_is_incorrect">The mobile number or password is incorrect</string>
+    <string name="you_entered_the_wrong_code_try_again">You entered the wrong code, Try again</string>
+    <string name="Can_not_connect_to_vibe_please_make_sure_you_have_internet_connection">Can\'t connect to Vibe, Please make sure you have internet connection</string>
+
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.beat.data.model.SubscriptionPlan" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_margin="@dimen/_6sdp">
+
+        <LinearLayout
+            android:id="@+id/freeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{(data.state == 3) ? @drawable/rectangle_corner_round_four : @drawable/rectangle_corner_round_eleven}"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:background="@drawable/rectangle_corner_round_four">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textColor="@{(data.state == 3) ? @color/colorWhite : @color/colorBlack}"
+                android:textSize="@dimen/_40sdp"
+                app:interval="@{data.recurringInterval}"
+                tools:text="Free"
+                tools:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="@{(data.state == 3) ? @color/colorWhite : @color/colorBlack}"
+                android:textSize="@dimen/_13sdp"
+                app:intervalUnit="@{data.recurringInterval}"
+                tools:text="Trial Plan"
+                tools:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@{(data.state == 3) ? @drawable/rectangle_corner_round_twelve : @drawable/rectangle_corner_round_nine}"
+                android:gravity="center"
+                android:text="@{(data.state == 3) ? @string/unsubscribe : @string/subscribe}"
+                android:textColor="@{(data.state == 3) ? @color/colorWhite : @color/colorBlack}"
+                android:textSize="@dimen/_14sdp"
+                tools:background="@drawable/rectangle_corner_round_twelve"
+                tools:text="@string/subscribe"
+                tools:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.description}"
+                android:textColor="@{(data.state == 3) ? @color/colorWhite : @color/colorBlack2}"
+                android:textSize="@dimen/_11sdp"
+                tools:text="Free for 30 days"
+                tools:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

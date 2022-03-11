@@ -1,0 +1,67 @@
+package com.beat.view.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
+import com.beat.R
+import com.beat.data.model.Track
+import com.beat.databinding.TrackItemBinding
+import com.beat.util.listener.TrackClickListener
+import com.beat.util.listener.TrackPopUpMenuClickListener
+import com.beat.view.dialog.TrackMenuDialog
+
+class FavoriteTrackAdapter(
+    private val context: Context,
+    private val list: ArrayList<Track>,
+    private val currentPlayingItem: Int,
+    private val trackClickListener: TrackClickListener,
+    private val trackPopUpMenuClickListener: TrackPopUpMenuClickListener
+) :
+    RecyclerView.Adapter<FavoriteTrackAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val trackItemBinding: TrackItemBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.track_item,
+            parent,
+            false
+        )
+        return ViewHolder(trackItemBinding)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.binding.data = list[position]
+
+        holder.binding.title.setTextColor(
+            if (position == currentPlayingItem) ContextCompat.getColor(
+                context,
+                R.color.colorPrimary
+            ) else ContextCompat.getColor(context, R.color.colorBlack)
+        )
+
+        holder.binding.menu.setOnClickListener {
+            TrackMenuDialog(context, list[position], trackPopUpMenuClickListener, false)
+        }
+
+        holder.binding.root.setOnClickListener {
+            trackClickListener.onTrackClick(
+                list[position],
+                position,
+                position == currentPlayingItem
+            )
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
+    }
+
+    class ViewHolder(trackItemBinding: TrackItemBinding) :
+        RecyclerView.ViewHolder(trackItemBinding.root) {
+        val binding = trackItemBinding
+    }
+
+}
